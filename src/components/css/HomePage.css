@@ -1,0 +1,38 @@
+.title {
+    padding: 10px;
+    color: rgb(49, 84, 117);
+}
+
+.global-stats {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.stats {
+    padding: 15px;
+}
+
+.stats-value {
+    color: rgb(80, 79, 79);
+    font-size: 2rem;
+}
+
+/* Top cryptocurrencies */
+.top-crypto-coins {
+    margin-bottom: 20px;
+}
+
+.coins-card {
+    padding: 20px;
+}
+
+.card-content {
+    color: rgb(92, 91, 91);
+}
+
+.card-top {
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

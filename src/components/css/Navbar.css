@@ -1,0 +1,19 @@
+.logoName {
+    text-decoration: none;
+    color: rgb(0, 187, 255);
+}
+
+.navLinks {
+    display: flex;
+    text-decoration: none;
+    color: rgb(184, 181, 181);
+}
+
+.navIcons {
+    justify-content: center;
+    margin: 0px 5px;
+}
+
+.navItems {
+    margin: 5px 0px;
+}
