@@ -28,26 +28,26 @@ const Navbar = () => {
                 <List>
                     <Link to='/' className="navLinks">
                         <ListItem button className="navItems">
-                                <HomeRoundedIcon className="navIcons"/>
-                                Home
+                            <HomeRoundedIcon className="navIcons" />
+                            Home
                         </ListItem>
                     </Link>
                     <Link to='/cryptocurrencies' className="navLinks">
                         <ListItem button className="navItems">
-                                <CurrencyBitcoinRoundedIcon className="navIcons"/>
-                                Cryotocurrencies
+                            <CurrencyBitcoinRoundedIcon className="navIcons" />
+                            Cryotocurrencies
                         </ListItem>
                     </Link>
                     <Link to='/exchanges' className="navLinks">
                         <ListItem button className="navItems">
-                                <TimelineRoundedIcon className="navIcons"/>
-                                Exchanges
+                            <TimelineRoundedIcon className="navIcons" />
+                            Exchanges
                         </ListItem>
                     </Link>
                     <Link to='/news' className="navLinks">
                         <ListItem button className="navItems">
-                                <NewspaperRoundedIcon className="navIcons"/>
-                                News
+                            <NewspaperRoundedIcon className="navIcons" />
+                            News
                         </ListItem>
                     </Link>
                 </List>

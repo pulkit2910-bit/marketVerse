@@ -2,17 +2,21 @@ import React from "react";
 import './css/HomePage.css'
 
 import millify from "millify";
-import { Avatar, Grid, Box, Typography, Card, CardActionArea , CardContent, CardMedia, Divider } from '@material-ui/core';
+import { Grid, Box, Typography} from '@material-ui/core';
+import { Link } from "react-router-dom";
 
+// Using api
 import { useGetCryptosQuery } from "../services/cryptoAPI";
 
+//components
+import { Cryptocurrencies, News } from '../components'
+
 const HomePage = () => {
-    const { data, isFetching } = useGetCryptosQuery();
+    const { data, isFetching } = useGetCryptosQuery(50);
 
     if (isFetching) return 'Loading....';
     
     const stats = data?.data?.stats;
-    const coins = data?.data?.coins;
     console.log(data);
 
     return (
@@ -20,7 +24,7 @@ const HomePage = () => {
             <Box sx={{flexGrow : 1}}>
                 <div className="global-stats">
 
-                    <Typography variant="h4" align="center" className="title">Global Crypto Stats</Typography>
+                    <Typography variant="h4" className="home-title">Global Crypto Stats</Typography>
                     <Grid container>
                         <Grid item xs={12} md={4} sm={6} className="stats">
                             <Typography variant="h5" className="stats-title" align="center">Total Coins</Typography>
@@ -48,40 +52,20 @@ const HomePage = () => {
 
                 <div className="top-crypto-coins">
 
-                    <Typography variant="h4" align="center" className="title">Top 10 CryptoCurrencies</Typography>
-                    <Grid container className="coins-container" spacing={4}>
-                        {
-                            coins?.map((coin) => 
-                                <Grid item xs={12} md={4} sm={6} key={coin?.rank}>
-                                    <CardActionArea>
-                                        <Card className="coins-card">
-                                                <CardMedia>
-                                                    <div className="card-top">
-                                                        <Typography variant="h6" component="span">{coin?.rank}. {coin?.symbol}</Typography>
-                                                        <Avatar src={coin?.iconUrl}/>
-                                                    </div>
-                                                </CardMedia>
-
-                                                <Divider />
-
-                                                <CardContent className="card-content">
-                                                    <Typography variant="subtitle1">Name: {coin?.name}</Typography>
-                                                    <Typography variant="subtitle1">Price: ${millify(coin?.price)}</Typography>
-                                                    <Typography variant="subtitle1">Market Cap: ${millify(coin?.marketCap)}</Typography>
-                                                    <Typography variant="subtitle1">Daily Change: {coin?.change}%</Typography>
-                                                </CardContent>
-                                        </Card>
-                                    </CardActionArea>
-                                </Grid>
-                            )
-                        }
-                    </Grid>
+                    <Typography variant="h4" className="home-title">Top 10 CryptoCurrencies</Typography>
+                    <Typography variant="h6" className="show-more"><Link to="/cryptocurrencies">Show More</Link></Typography>
 
                 </div>
+                <Cryptocurrencies simplified />
+                <div className="top-crypto-coins">
+
+                    <Typography variant="h4" className="home-title">Latest Market News</Typography>
+                    <Typography variant="h6" className="show-more"><Link to="/news">Show More</Link></Typography>
+
+                </div>
+                <News simplified />
 
             </Box>
-            
-
         </div>
     )
 }

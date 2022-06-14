@@ -286,6 +286,20 @@ a:hover{
     .heading{
         margin-top: 20px;
     }
+    .news-image-container {
+        flex-direction: column;
+    }
+    .news-image-container > img{
+        margin-right: 0px;
+        margin-bottom: 10px;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.cards:hover {
+    box-shadow: 2px 2px 30px rgb(84, 84, 84);
+    transition: all 0.25s;
 }
 
 .select-news{
@@ -296,13 +310,16 @@ a:hover{
 }
 .news-image-container{
     display: flex !important;
-    justify-content: space-between !important;
+    align-items: center;
+    justify-content: space-between;
 }
+
 .news-title{
 width: 70%;
 }
 
-.news-image-container .img{
+.news-image-container > img{
+    margin-right: 10px;
     width:100px;
     height:100px;
 }
@@ -313,6 +330,7 @@ width: 70%;
 .provider-container{
     display: flex;
     justify-content: space-between;
+    padding: 10px 20px;
 }
 .provider-name{
     margin-left: 10px;
@@ -340,7 +358,7 @@ width: 70%;
     margin-top: 0px !important;
     font-weight: 900 !important;
 }
-.home-heading-container{
+.top-crypto-coins{
     display: flex;
     justify-content: space-between;
     align-items: center;

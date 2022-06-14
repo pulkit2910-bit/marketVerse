@@ -20,7 +20,7 @@ export const cryptoAPI = createApi({
     // All the queries we want to fetch data from goes below
     endpoints: (builer) => ({
         getCryptos : builer.query({
-            query: () => createRequest('/coins'),
+            query: (count) => createRequest(`/coins?limit=${count}`),
         })
     })
 });
