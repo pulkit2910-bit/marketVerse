@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import './css/HomePage.css'
 
 import moment from "moment";
-import { Avatar, Grid, Box, Typography, Card, CardActionArea, CardContent, CardMedia, Divider } from '@material-ui/core';
+import { Avatar, Grid, Box, Typography, Card, CardActionArea, CardContent, TextField, Divider } from '@material-ui/core';
 
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 
 const News = ({ simplified }) => {
     const count = simplified ? 10 : 60;
     const { data, isFetching } = useGetCryptoNewsQuery(count);
+    // const [ searchTerm, setNewsSearchTerm ] = useState("");
 
     if (isFetching) return "Loading...";
 
@@ -17,6 +18,13 @@ const News = ({ simplified }) => {
 
     return (
         <div>
+            {/* {simplified ?
+                <></>
+                :
+                <div className="search-news">
+                    <TextField id="filled-basic" label="Search News" variant="filled" onChange={(e) => setNewsSearchTerm(e.target.value)}/>
+                </div>
+            } */}
             <Box sx={{ flexGrow: 1 }}>
 
                 <Grid container spacing={4}>

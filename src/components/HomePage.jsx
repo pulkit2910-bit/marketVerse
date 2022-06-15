@@ -24,7 +24,7 @@ const HomePage = () => {
             <Box sx={{flexGrow : 1}}>
                 <div className="global-stats">
 
-                    <Typography variant="h4" className="home-title">Global Crypto Stats</Typography>
+                    <Typography variant="h5" className="home-title">Global Crypto Stats</Typography>
                     <Grid container>
                         <Grid item xs={12} md={4} sm={6} className="stats">
                             <Typography variant="h5" className="stats-title" align="center">Total Coins</Typography>
@@ -52,7 +52,7 @@ const HomePage = () => {
 
                 <div className="top-crypto-coins">
 
-                    <Typography variant="h4" className="home-title">Top 10 CryptoCurrencies</Typography>
+                    <Typography variant="h5" className="home-title">Top 10 CryptoCurrencies</Typography>
                     <Typography variant="h6" className="show-more"><Link to="/cryptocurrencies">Show More</Link></Typography>
 
                 </div>
